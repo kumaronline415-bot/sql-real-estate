@@ -1,0 +1,27 @@
+-- Create Table
+CREATE TABLE real_estate (
+    ListingID INT,
+    City VARCHAR(50),
+    PropertyType VARCHAR(50),
+    Bedrooms INT,
+    Bathrooms INT,
+    Area_sqft INT,
+    YearBuilt INT,
+    ListingPrice BIGINT,
+    SalePrice BIGINT,
+    Status VARCHAR(20)
+);
+
+-- Sample Analysis Queries
+SELECT COUNT() FROM real_estate;
+
+SELECT City, AVG(SalePrice) AS avg_price
+FROM real_estate
+GROUP BY City;
+
+SELECT PropertyType, COUNT() 
+FROM real_estate
+GROUP BY PropertyType;
+
+SELECT ListingID, (SalePrice - ListingPrice) AS Profit
+FROM real_estate;
